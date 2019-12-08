@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="box" style="margin-left: 10%; margin-right:10%; margin-top: 3%; background-color: rgb(202, 255, 202)">
+    <p> If you wanna help this website keep going please consider donating to my paypal down below, it would really help me add so many feautures, some of these
+        feautures would be the ability to view and download the clips with the exact timeframe from this website (without Youtube) and also the Pewdsays feauture which
+        turns any sentence into a clip of pewdiepie saying that sentence. your donation will also help the website run since it's not free to do so (that's why i have some ads), Thank you!
+    </p>
+</div>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="DYNUYV6FADK7S" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/en_DZ/i/scr/pixel.gif" width="1" height="1" />
+    </form> 
+
+{% endblock %}

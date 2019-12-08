@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+<div id="Container"
+style="padding-bottom:56.25%; position:relative; display:block; width: 100%;">
+    <iframe height="100%" width="100%" src="{{ 'https://www.youtube.com/embed/%s?start=%d&end=%d'% (video.videoId, video.start,video.start+video.duration+1) }}" allow="encrypted-media;" allowfullscreen ></iframe>
+</div>
+<h3 style="margin-top: 2%; width: 100%;">{{ video.flavor }}</h3>
+
+<button type="button" onclick="history.go(0)"><a id="randomBtn"></a>Randomize</button>
+<br/>
+</div>
+
+<div class="box" style="margin-left: 10%; margin-right:10%; margin-top: 3%; background-color: rgb(202, 255, 202)">
+    <p> Note : Here you will find random sentences from random videos of pewdiepie, clicking randomize will refresh the page and show another sentence. </br>
+        I find that some of these out of context lines are really hilarious.
+    </p>
+</div>
+
+{% endblock %}

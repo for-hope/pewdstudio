@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% for match in matches %}
+    {% set line = match %}
+    {% set videos = matches[line] %}
+      <section class="second clearfix" style="padding-bottom: 1%; padding-top: 5%;">
+          <h1>{{ rlength }} results for <span style="color:#D40240">'{{ line }}'</span> from 2017 to 2019 (approx)</h1>
+        {% if videos|length > 0%} 
+          {% for video in videos %}
+        <article class="video">
+          <figure>
+          <a class="fancybox fancybox.iframe" href="{{ 'https://www.youtube.com/embed/%s?start=%d&end=%d'% (video.videoId, video.start,video.start+video.duration+2) }}"><img class="videoThumb" src="{{ 'https://img.youtube.com/vi/%s/maxresdefault.jpg'% (video.videoId) }} "></a>
+          </figure>
+          <div class="container">
+            <h2 class="ellipsis" title="{{ video.flavor }}">{{ video.flavor }}</h2>
+          </div>
+          <div>
+            <p class="" style="color: black; display: inline-block; width: 85%;">Original Video</p>
+            <a class="external_btn" href="{{ 'https://www.youtube.com/watch?v=%s'% (video.videoId) }}" target="blank"><img src="{{ url_for('static', filename='images/external_ic.png')}}" class="icon" style=" width:22px; height:22px;"title="Youtube link" alt="Link"></a>
+          </div>
+        </article>
+          {% endfor %}
+          {% if videos|length >= 20 and matches|length > 1  %}
+            {%set link = url_for('search',t='normal',q=line) %}
+            <input type="button" onclick="location.href='{{link}}';"class="button" value="More Results"/>
+          {% endif %}
+        </section>
+         {% if matches|length == 1 %}
+          <div style="padding-bottom:10%; background-color: #EEE9E9;">
+            {% if prev_url %}
+            <a href="{{ prev_url }}" style="color: rgb(41, 114, 241);">Previous - </a>
+            {% endif %}
+            <a href="" style="color: rgb(41, 114, 241);">{{ page }}</a>
+            {% if next_url %}
+            <a href="{{ next_url }}" style="color: rgb(41, 114, 241);"> - Next</a>
+            {% endif %}
+            <!-- <a href="https://www.w3schools.com/html/" style="color: rgb(41, 114, 241);">1</a> -->
+            </div>
+          {% endif %}
+        {% else %}
+        <h1 style="padding-top: 6%; padding-bottom: 6%; color: black;">No results found.</h1>
+        {% endif %}
+        
+  {% endfor %}
+{% endblock %}
+    

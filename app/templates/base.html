@@ -1,0 +1,119 @@
+<html lang="en">
+    <head>
+        {% if title %}
+            <title>{{ title }} - Pewdstudio</title>
+        {% else %}
+            <title> Pewdstud.io </title>
+        {% endif %}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Pewdstud.io is a search engine for pewdiepie's videos with other useful and entertaining tools and games.">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-distributed.css') }}">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename= 'apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename= 'favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename= 'favicon-16x16.png')}}">
+        <link rel="manifest" href="{{ url_for('static', filename= 'site.webmanifest')}}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+
+        {% if title == 'Results' %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+            <link rel="shortcut icon" href="favicon.ico">
+        {% else %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        {% endif %}
+    </head>
+    <body style="text-align: center; ">
+		<!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="{{ url_for('index') }}" class="logo">Pewdstud.io</a>
+                <nav id="nav">
+                    <a href="{{ url_for('index') }}" id="library">Library</a>
+                    <a href="{{ url_for('random') }}" id="random">Random</a>
+                    <a href="http://higherorlower.pewdstud.io/" id="higherlower">Higher Or Lower</a>
+                    <a href="{{ url_for('pewdsays') }}" id="pewdsays">Pewdsays</a>
+                    <a href="https://discordapp.com/invite/qskKpw?utm_source=Discord%20Widget&utm_medium=Connect" class='discord' id="discord">Discord</a>
+                    <a href="{{ url_for('donate') }}" class='donate' id="donate">Donate</a>
+                </nav>
+            </div>
+        </header>
+        <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        <div style="display: flex;">
+
+            <aside id='left'> 
+                <section style="width: 200px;">
+                        <div>
+                           
+                        </div>
+                </section>
+            </aside>
+            
+
+            <div class='container0' style="display: inline-block;">
+                    {% block content %} {% endblock %}
+            </div>
+
+            <aside id='right'>
+                <section style="width: 250px;">
+                        <iframe src="https://discordapp.com/widget?id=653203078635454466&theme=dark"  allowtransparency="true" height="400px" width="100%"
+                        frameborder="0" style="margin-top: 6%; position: relative;"></iframe>
+                </section>
+
+                <section>                
+                    <div class="box" style="background-color: rgb(202, 255, 202); margin-top:2% ;">
+                        <p> Please consider donating to keep the site </br>  running and so i can add more amazing features in the future. 
+                        </p>
+                    </div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="DYNUYV6FADK7S" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" src="https://www.paypal.com/en_DZ/i/scr/pixel.gif" width="1" height="1" />
+                        </form> 
+                </section>
+            </aside>
+
+        </div>
+
+        <footer class="footer-distributed">
+
+                <div class="footer-right">
+    
+
+                    <a href="https://twitter.com/pewdstudio" target="_blank"><i class="fab fa-twitter" style="line-height: 1.5;"></i></a>
+
+    
+                </div>
+    
+                <div class="footer-left">
+    
+                    <p class="footer-links">
+                        <a href="{{ url_for('index') }}">Home</a>
+                        ·
+                        <a href="{{ url_for('faq') }}">FAQ</a>
+                        ·
+                        <a href="mailto: support@pewdstud.io">Contact Me</a>
+                    </p>
+
+    
+                    <p>Pewdstud.io &copy; 2019 | Contact : support@pewdstud.io</p>
+                </div>
+                
+            </footer>
+
+		<!-- Scripts -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='compiled/base.min.js') }}"></script>
+    </body>
+</html>

@@ -14,7 +14,7 @@
           <div class="container">
             <h2 class="ellipsis forcedh2" title="{{ video.flavor }}">{{ video.flavor }}</h2>
           </div>
-          <div>
+          <div style="background: #EEE9E9; margin-left: 1px; margin-right: 1px;">
             <p class="second" style="color: black; display: inline-block; width: 85%;">Original Video</p>
             <a class="external_btn" href="{{ 'https://www.youtube.com/watch?v=%s'% (video.videoId) }}" target="blank"><img src="{{ url_for('static', filename='images/external_ic.png')}}" class="icon" style=" width:22px; height:22px;"title="Youtube link" alt="Link"></a>
           </div>

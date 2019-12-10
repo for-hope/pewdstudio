@@ -4,7 +4,7 @@
     {% set line = match %}
     {% set videos = matches[line] %}
       <section class="second clearfix" style="padding-bottom: 1%; padding-top: 5%;">
-          <h1>{{ rlength }} results for <span style="color:#D40240">'{{ line }}'</span> from 2017 to 2019 (approx)</h1>
+          <h1 class='forcedh1'>{{ rlength }} results for <span style="color:#D40240">'{{ line }}'</span> from 2017 to 2019 (approx)</h1>
         {% if videos|length > 0%} 
           {% for video in videos %}
         <article class="video">
@@ -12,10 +12,10 @@
           <a class="fancybox fancybox.iframe" href="{{ 'https://www.youtube.com/embed/%s?start=%d&end=%d'% (video.videoId, video.start,video.start+video.duration+2) }}"><img class="videoThumb" src="{{ 'https://img.youtube.com/vi/%s/maxresdefault.jpg'% (video.videoId) }} "></a>
           </figure>
           <div class="container">
-            <h2 class="ellipsis" title="{{ video.flavor }}">{{ video.flavor }}</h2>
+            <h2 class="ellipsis forcedh2" title="{{ video.flavor }}">{{ video.flavor }}</h2>
           </div>
           <div>
-            <p class="" style="color: black; display: inline-block; width: 85%;">Original Video</p>
+            <p class="second" style="color: black; display: inline-block; width: 85%;">Original Video</p>
             <a class="external_btn" href="{{ 'https://www.youtube.com/watch?v=%s'% (video.videoId) }}" target="blank"><img src="{{ url_for('static', filename='images/external_ic.png')}}" class="icon" style=" width:22px; height:22px;"title="Youtube link" alt="Link"></a>
           </div>
         </article>
@@ -38,7 +38,7 @@
             </div>
           {% endif %}
         {% else %}
-        <h1 style="padding-top: 6%; padding-bottom: 6%; color: black;">No results found.</h1>
+        <h1 class='forcedh1' style="padding-top: 6%; padding-bottom: 6%; color: black;">No results found.</h1>
         {% endif %}
         
   {% endfor %}

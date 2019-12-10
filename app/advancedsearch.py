@@ -1,6 +1,7 @@
 import sqlite3
 import re
 from difflib import SequenceMatcher as sq
+from app.models import Line
 
 def longest_common_substring(s1, s2):
   m = [[0] * (1 + len(s2)) for i in range(1 + len(s1))]
@@ -21,14 +22,17 @@ def longest_common_sentence(s1, s2):
     s2_words = s2.split(' ')  
     return ' '.join(longest_common_substring(s1_words, s2_words))
 
-def sql_search(word):
-    con = sqlite3.connect('captions.db')
-    cursorObj = con.cursor()
-    word = '%{}%'.format(word)
-    cursorObj.execute('SELECT flavor FROM lines WHERE flavor LIKE ?',(word,))
-    results = cursorObj.fetchall()
-    con.close()
+# def sql_search(word):
+#     con = sqlite3.connect('captions.db')
+#     cursorObj = con.cursor()
+#     word = '%{}%'.format(word)
+#     cursorObj.execute('SELECT flavor FROM lines WHERE flavor LIKE ?',(word,))
+#     results = cursorObj.fetchall()
+#     con.close()
+#     return results
 
+def sql_search(word):
+    results = Line.query.filter(Line.flavor.like('%{}%'.format(word))).all()
     return results
 
 def find_phrases(phrase):

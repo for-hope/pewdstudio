@@ -24,9 +24,9 @@
             {%set link = url_for('search',t='normal',q=line) %}
             <input type="button" onclick="location.href='{{link}}';"class="button" value="More Results"/>
           {% endif %}
-        </section>
+
          {% if matches|length == 1 %}
-          <di>
+          <div style= "padding-bottom:5% ;">
             {% if prev_url %}
             <a href="{{ prev_url }}" style="color: rgb(41, 114, 241);">Previous - </a>
             {% endif %}
@@ -37,6 +37,7 @@
             <!-- <a href="https://www.w3schools.com/html/" style="color: rgb(41, 114, 241);">1</a> -->
             </div>
           {% endif %}
+        </section>
         {% else %}
         <h1 class='forcedh1' style="padding-top: 6%; padding-bottom: 6%; color: black;">No results found.</h1>
         {% endif %}

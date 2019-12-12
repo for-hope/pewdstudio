@@ -10,9 +10,20 @@
 
         gtag('config', 'UA-154339688-1');
     </script>
-
+    <!-- Google adsense -->
     <script data-ad-client="ca-pub-1640318177595646" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- Other ads -->
+
+    <script type="text/javascript">
+        window._mNHandle = window._mNHandle || {};
+        window._mNHandle.queue = window._mNHandle.queue || [];
+        medianet_versionId = "3121199";
+    </script>
+    <script src="//contextual.media.net/dmedianet.js?cid=8CU534K6G" async="async"></script>
+
+
 
     {% if title %}
     <title>{{ title }} - Pewdstudio</title>
@@ -69,26 +80,25 @@
         <aside id='left'>
             <section style="width: 200px;">
                 <div>
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- left-banner -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1640318177595646"
-                        data-ad-slot="6154518032" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    <!-- ads -->
+                    <div id="612293688">
+                        <script type="text/javascript">
+                            try {
+                                window._mNHandle.queue.push(function () {
+                                    window._mNDetails.loadTag("612293688", "160x600", "612293688");
+                                });
+                            }
+                            catch (error) { }
+                        </script>
+                    </div>
                 </div>
             </section>
         </aside>
 
 
         <div class='container0' style="display: inline-block;">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- horiz_banner -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1640318177595646"
-                data-ad-slot="2326953660" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+
+
             {% block content %} {% endblock %}
         </div>
 

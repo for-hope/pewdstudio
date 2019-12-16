@@ -2,4 +2,6 @@ __pycache__
 .vscode
 copydb.py
 venv
+/flask_session/*
 flask_session
+app/flask_session/*

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="discord_wrapper">
+    <img src="{{ url_for('static',filename='images/banner-discord.jpg')}}">
+    <div class="box" style="margin-left: 10%; margin-right:10%; margin-top: 3%; background-color: #7289DA">
+        <p style="color: white; font-weight: bold;"> Join our official discord <span style="color:darkslateblue;">Pewdie & Cutie</span>, </br>
+            the largest Pewdiepie Discord! With 24.000 members and counting, </br>
+            you can chat with fellow 9 year olds from across the globe!
+        </p>
+    </div>
+
+    <div id="discordInviteBox"></div>
+</div>
+
+{% endblock %}

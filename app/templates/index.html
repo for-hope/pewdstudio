@@ -1,24 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
+<div style="padding-left:5%; padding-right: 5%;">
     <div style="display: inline-block;">
-        <img src="{{ url_for('static', filename='images/big-logo.png')}}" style="max-width: 80%; margin-top: 10%; padding-bottom: 15px;">
+        <img src="{{ url_for('static', filename='images/big-logo.png')}}"
+            style="max-width: 80%; margin-top: 10%; padding-bottom: 15px;">
         <form method="post" novalidate>
             {{ form.hidden_tag() }}
-                <p>
-                    {{ form.text }} <br>
-                </p>
-                
+            <p>
+                {{ form.text }} <br>
+            </p>
+
             <div style="display: flex; justify-content: center; text-align: center;">
                 {% for subradio in form.radio %}
                 <div class="4u 12u$(xsmall)">
@@ -27,21 +19,24 @@
                 </div>
                 {% endfor %}
             </div>
-            
+
             <br>
-                <p>
-                    {{ form.submit() }}
-                </p>
+            <p>
+                {{ form.submit() }}
+            </p>
         </form>
     </div>
     <div class="box" style="margin-left: 10%; margin-right:10%; background-color: rgb(202, 255, 202)">
-        <p>Note : this library is a search engine for pewdiepie's videos, it searches every video for words or sentences (it uses subtitles so only videos with subs enabled would be searched), 
-            normal search searches for the exact word or sentence while the advanced search searches for all matching parts.</br>
+        <p>Note : this library is a search engine for pewdiepie's videos, it searches every video for words or sentences
+            (it uses subtitles so only videos with subs enabled would be searched),
+            normal search searches for the exact word or sentence while the advanced search searches for all matching
+            parts.</br>
 
-            You might wanna use the advanced feature if wanna make pewdiepie say sentences or sing a song, to do that try downloading and cutting the videos to match the parts,
+            You might wanna use the advanced feature if wanna make pewdiepie say sentences or sing a song, to do that
+            try downloading and cutting the videos to match the parts,
             I'm going to add a feature soon where the videos shown will be directly cut and not linked from Youtube.
         </p>
     </div>
+</div>
 
 {% endblock %}
-

@@ -145,7 +145,7 @@ ul {
   }
 
   .container0 {
-    width: 90%;
+    /* width: 90%; */
   }
 
 }
@@ -171,7 +171,7 @@ ul {
   }
 
   .container0 {
-    width: 90% !important;
+    /* width: 90% !important; */
   }
 
 }
@@ -197,7 +197,7 @@ ul {
   }
 
   .container0 {
-    width: 90% !important;
+    /* width: 90% !important; */
   }
 
 }
@@ -235,13 +235,13 @@ iframe {
   color: #7289DA
 }
 
-@media screen and (min-width: 980px) {
+/* @media screen and (min-width: 980px) {
 
   #discord.discord {
     display: none;
   }
 
-}
+} */
 
 #twitter::before {
   content: '\f099';
@@ -531,7 +531,7 @@ section {
   line-height: 1.5;
 }
 
-.second p{
+.second p {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.25;
@@ -544,11 +544,12 @@ section {
   white-space: nowrap;
   width: 100%;
 }
+
 @media (max-width: 1200px) {
   .second p {
     font-size: 11px;
   }
-}  
+}
 
 /* Video Gallery
 ********************************************
@@ -956,13 +957,13 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 /*Cookie Consent Begin*/
 #cookieConsent {
-  background-color: rgba(20,20,20,0.8);
+  background-color: rgba(20, 20, 20, 0.8);
   min-height: 26px;
   font-size: 14px;
   color: #ccc;
   line-height: 26px;
   padding: 8px 0 8px 30px;
-  font-family: "Trebuchet MS",Helvetica,sans-serif;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -970,10 +971,12 @@ only screen and (min-device-pixel-ratio: 1.5) {
   display: none;
   z-index: 9999;
 }
+
 #cookieConsent a {
   color: #4B8EE7;
   text-decoration: none;
 }
+
 #closeCookieConsent {
   float: right;
   display: inline-block;
@@ -983,9 +986,11 @@ only screen and (min-device-pixel-ratio: 1.5) {
   margin: -15px 0 0 0;
   font-weight: bold;
 }
+
 #closeCookieConsent:hover {
   color: #FFF;
 }
+
 #cookieConsent a.cookieConsentOK {
   background-color: #F1D600;
   color: #000;
@@ -996,7 +1001,17 @@ only screen and (min-device-pixel-ratio: 1.5) {
   float: right;
   margin: 0 60px 0 10px;
 }
+
 #cookieConsent a.cookieConsentOK:hover {
   background-color: #E0C91F;
 }
+
 /*Cookie Consent End*/
+
+.discord_wrapper {
+  background-image: url("../images/bg.png");
+  height: 100%;
+  overflow: hidden;
+  padding-bottom:10px;
+  padding-top: 5px;
+}

@@ -14,16 +14,6 @@
     <script data-ad-client="ca-pub-1640318177595646" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-    <!-- Other ads -->
-
-    <script type="text/javascript">
-        window._mNHandle = window._mNHandle || {};
-        window._mNHandle.queue = window._mNHandle.queue || [];
-        medianet_versionId = "3121199";
-    </script>
-    <script src="//contextual.media.net/dmedianet.js?cid=8CU534K6G" async="async"></script>
-
-
 
     {% if title %}
     <title>{{ title }} - Pewdstudio</title>
@@ -33,12 +23,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if description %}
+    <meta name="description" content="{{description}}">
+    {% else %}
     <meta name="description"
         content="Pewdstud.io is a search engine for pewdiepie's videos with other useful and entertaining tools and games.">
+    {% endif %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-distributed.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/discordInvite.css') }}" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename= 'apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename= 'favicon-32x32.png')}}">
@@ -66,15 +61,16 @@
             <nav id="nav">
                 <a href="{{ url_for('index') }}" id="library">Library</a>
                 <a href="{{ url_for('random') }}" id="random">Random</a>
-                <a href="http://higherorlower.pewdstud.io/" id="higherlower">Higher Or Lower</a>
+                <a href="https://higherorlower.pewdstud.io/" target="_blank" id="higherlower">Higher Or Lower</a>
                 <a href="{{ url_for('pewdsays') }}" id="pewdsays">Pewdsays</a>
-                <a href="https://discordapp.com/invite/az7GDc?utm_source=Discord%20Widget&utm_medium=Connect"
-                    class='discord' id="discord">Discord</a>
+                <a href="{{ url_for('discord') }}" class='discord' id="discord">Discord</a>
                 <a href="{{ url_for('donate') }}" class='donate' id="donate">Donate</a>
             </nav>
         </div>
     </header>
+
     <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
     <div style="display: flex;">
 
         <aside id='left'>
@@ -96,15 +92,18 @@
         </aside>
 
 
-        <div class='container0' style="display: inline-block;">
 
-
+        <div class='container0' style="display: inline-block; height: auto !important; min-height: 500px; height: 500px;">
             {% block content %} {% endblock %}
         </div>
 
         <aside id='right'>
             <section style="width: 250px;">
-                <iframe src="https://discordapp.com/widget?id=653203078635454466&theme=dark" allowtransparency="true"
+                <div class="box" style="background-color: rgb(202, 255, 202); margin-top:2% ;">
+                    <p> Please consider joining our official discord Pewdie & Cutie with 24k members and counting!
+                    </p>
+                </div>
+                <iframe src="https://discordapp.com/widget?id=333915065277349888&theme=dark" allowtransparency="true"
                     height="400px" width="100%" frameborder="0" style="margin-top: 6%; position: relative;"></iframe>
             </section>
 
@@ -154,6 +153,8 @@
                 <a href="{{ url_for('faq') }}">FAQ</a>
                 ·
                 <a href="mailto: support@pewdstud.io">Contact Me</a>
+                ·
+                <a href="{{ url_for('discord') }}">Discord</a>
             </p>
 
 
@@ -163,6 +164,16 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/discordInvite.js') }}"></script>
+    <script>
+        discordInvite.init({
+            inviteCode: 'ZZuFZus',
+            title: 'Pewdie & Cutie',
+            width: 'auto'
+        });
+        discordInvite.render();
+    </script>
+
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/util.js') }}"></script>

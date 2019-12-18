@@ -43,14 +43,14 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-
+<!-- 
     {% if title == 'Results' %}
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}"> -->
-    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="shortcut icon" href="favicon.ico">
     {% else %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    {% endif %}
+    {% endif %} -->
 </head>
 
 <body style="text-align: center; ">
@@ -127,12 +127,12 @@
 
     </div>
 
-    <div id="cookieConsent">
+    <!-- <div id="cookieConsent">
         <div id="closeCookieConsent">x</div>
         This website is using cookies. <a href="https://www.cookie-accept.com/en/" target="_blank">More info</a>. <a
             class="cookieConsentOK">That's
             Fine</a>
-    </div>
+    </div> -->
 
     <footer class="footer-distributed">
 
@@ -152,7 +152,7 @@
                 ·
                 <a href="{{ url_for('faq') }}">FAQ</a>
                 ·
-                <a href="mailto: support@pewdstud.io">Contact Me</a>
+                <a href="mailto: support@pewdstud.io">Contact Us</a>
                 ·
                 <a href="{{ url_for('discord') }}">Discord</a>
             </p>

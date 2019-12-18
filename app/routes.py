@@ -32,6 +32,7 @@ def search():
     #videoss = session['rows']
     if 'search_text' in session:
         mline = session['search_text']
+        mline = str(mline).rstrip()
         if search == 'advanced':
             f = find_phrases(mline)
             matches = {}
@@ -55,6 +56,7 @@ def search():
                 return render_template('search.html', title='Results', results=results, matches=matches, page=page, rlength=rlength)
         else:
             mline = request.args.get('q')
+            mline = str(mline).rstrip()
             q = mline
             t = request.args.get('t')
             results = Line.query.filter(
@@ -72,6 +74,7 @@ def search():
             return render_template('search.html', title='Results', matches=matches, next_url=next_url, prev_url=prev_url, page=page, rlength=rlength)
     else:
         mline = request.args.get('q')
+        mline = str(mline).rstrip()
         q = mline
         t = request.args.get('t')
         if mline != '':

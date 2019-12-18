@@ -43,7 +43,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-<!-- 
+    <!-- 
     {% if title == 'Results' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
@@ -93,11 +93,13 @@
 
 
 
-        <div class='container0' style="display: inline-block; height: auto !important; min-height: 500px; height: 500px;">
+        <div class='container0'
+            style="display: inline-block; height: auto !important; min-height: 500px; height: 500px;">
             {% block content %} {% endblock %}
         </div>
 
         <aside id='right'>
+
             <section style="width: 250px;">
                 <div class="box" style="background-color: rgb(202, 255, 202); margin-top:2% ;">
                     <p> Please consider joining our official discord Pewdie & Cutie with 24k members and counting!
@@ -105,6 +107,12 @@
                 </div>
                 <iframe src="https://discordapp.com/widget?id=333915065277349888&theme=dark" allowtransparency="true"
                     height="400px" width="100%" frameborder="0" style="margin-top: 6%; position: relative;"></iframe>
+            </section>
+
+            <section>
+                <a href="https://www.patreon.com/bePatron?u=28291613"
+                    data-patreon-widget-type="become-patron-button">Become a Patron!</a>
+                <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
             </section>
 
             <section>
